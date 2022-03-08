@@ -339,6 +339,7 @@ __pycache__
 /static
 /media
 
+sendgrid.env
 
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,python,django

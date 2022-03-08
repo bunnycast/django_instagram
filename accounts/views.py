@@ -8,8 +8,9 @@ def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            signed_user = form.save()
             messages.success(request, "Welcome to Sign Up! :D")
+            signed_user.send_welcome_email()    # celery로 비동기 처
             next_url = request.GET.get('next', '/')
             return redirect(next_url)
     else:
